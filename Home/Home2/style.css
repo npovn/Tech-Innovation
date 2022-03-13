@@ -1,0 +1,284 @@
+@font-face {
+    font-family: Iciel;
+    src: url(../Asset/Fonts/Iciel.ttf);
+}
+
+@font-face {
+    font-family: Briko;
+    src: url(../Asset/Fonts/Briko.ttf);
+}
+
+@font-face {
+    font-family: SVN-Aleo;
+    src: url(../Asset/Fonts/SVN-Aleo.ttf);
+}
+
+@font-face {
+    font-family: Spectral;
+    src: url(../Asset/Fonts/Spectral.ttf);
+}
+
+@font-face {
+    font-family: NorthLand;
+    src: url(../Asset/Fonts/NorthLand.ttf);
+}
+
+@font-face {
+    font-family: Aquus;
+    src: url(../Asset/Fonts/Aquus.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.home{
+    width: 100%; 
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+.backgroundcover{
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    background: linear-gradient(rgba(10, 0, 0, 0.75), 
+    rgba(0, 10, 0, 0.75));
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.parallax{
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Navbar */
+.navbar{
+    width: 80%;
+    margin: auto;
+    padding: 35px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 10vh;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    font-family: Iciel;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.2vh;
+}
+
+.navbar ul li::after{
+    content: "";
+    align-items: center;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    /* Cái này set cho animation */
+    bottom: -12px;
+    background-color: transparent;
+
+    position: absolute;
+    transition: 0.3s;
+}
+
+/* Title */
+.title{
+    width: 100%;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+@keyframes Header_Transition {
+    0%{
+        transform: translateY(40px);
+        color: transparent;
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.title h1{
+    font-family: Aquus;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0 2.5vw;
+
+    animation: Header_Transition 0.6s ease-out;
+}
+
+@keyframes Description_Transition {
+    0%{
+        transform: translateY(60px);
+        color: transparent;
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.title p{
+    font-family: Iciel;
+    text-transform: uppercase;
+    margin: 0 2.5vw;
+    padding: 0;
+
+    animation: Description_Transition 1s ease-out;
+}
+
+@keyframes Button_Transition {
+    0%{
+        transform: translateY(100px);
+        color: transparent;
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.title div a button{
+    color: white;
+    font-size: 1.5rem;
+    width: 190px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 20 25px;
+    padding: 0;
+    border: 3px solid rgb(255, 96, 96);
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    font-family: Iciel;
+    text-transform: uppercase;
+
+    animation: Button_Transition 1s ease-out;
+}
+/* Format span hiệu ứng của button */
+.BtnContainer button span{
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    background-color: rgb(255, 96, 96);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.2s;
+}
+
+.title div a button:hover{
+    border: transparent;
+    color: rgb(15, 15, 15);
+}
+
+.BtnContainer button:hover span{
+    width: 100%;
+    border: 3px solid rgb(255, 106, 106);
+}
+
+/* Khi media lớn như pc */
+@media screen and (min-width: 801px) {
+    .navbar ul li a {
+        font-size: 20px;
+    }
+    .navbar ul li:hover::after{
+        bottom: -8px;
+        background-color: rgb(255, 96, 96);
+    }
+    .navbar ul li a:hover{
+        color: rgb(197, 233, 221);
+    }
+    .title h1{
+        font-size: 140px;
+    }
+    .title p{
+        font-size: 20px;
+        margin-bottom: 17px;
+    }
+    .BtnContainer{
+        display: flex;
+        justify-content: left;
+    }
+  }
+/* Chỉnh cỡ navbar cho phù hợp  */
+  @media screen and (max-width: 1080px) {
+    .navbar ul li a {
+        font-size: 15px;
+      }
+    .title h1{
+        font-size: 100px;
+    }
+    .navbar ul li::after{
+        height: 4px;
+    }
+  }
+
+  @media screen and (max-width: 1020px) {
+    .navbar ul li a {
+        font-size: 13px;
+      }
+      .navbar ul li::after{
+        height: 3.3px;
+    }
+  }
+
+/* Khi media nhỏ cỡ mobile */
+  @media screen and (max-width: 800px) {
+    .navbar ul li a, .navbar ul li::after {
+        display: none;
+    }
+    .title h1{
+        font-size: 60px;
+        margin-bottom: 25px;
+    }
+    .title p{
+        font-size: 10px;
+        margin-bottom: 25px;
+    }
+    .BtnContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .Logo{
+        width: 95px;
+        height: auto;
+    }
+  }
+
+/* Format cái div content */
+.content{
+    min-height: 100vh;
+    z-index: 1;
+}
