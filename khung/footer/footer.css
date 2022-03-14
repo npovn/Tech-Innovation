@@ -8,11 +8,11 @@ body{
 	padding:0;
 	box-sizing: border-box;
 }
-.container{
+.footer-container{
 	max-width: 1170px;
 	margin:auto;
 }
-.row{
+.footer-row{
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -48,7 +48,7 @@ body{
 	box-sizing: border-box;
 	width: 50px;
 }
-.copyright{
+.footer-copyright{
     text-align: center;
     font-size: 18px;
     margin-top: 70px;
