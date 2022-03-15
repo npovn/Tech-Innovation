@@ -139,7 +139,7 @@ body{
     background-color: transparent;
 
     /* Chỉnh dựa trên height của .Logo với 1/2 height của burger_menu */
-    transform: translateX(0) translateY(90px);
+    transform: translateX(0) translateY(120px);
     transition: all ease-in-out .5s;
 }
 
@@ -155,7 +155,7 @@ body{
     text-decoration: none;
     text-transform: uppercase;
     color: transparent;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .burger_menu.open{
@@ -166,7 +166,11 @@ body{
 
 .burger_menu.open ul.mobile_navbar li a{
     color: white;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+.burger_menu.open ul.mobile_navbar li a:hover{
+    color: rgb(164, 223, 250);
 }
 
 @keyframes Header_Transition {
