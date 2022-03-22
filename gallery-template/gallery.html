@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="gallery.css" />
+
+    <!-- Khúc này để thêm hiệu ứng: khi click sẽ phóng to hình/text cho dễ đọc hoặc để khi bị overflow text -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="gallery-zoom.js"></script>
+    <!-- Nếu muốn thêm hiệu ứng ày vào một thứ thì cho class zoom-onClick -->
+  </head>
+  <body>
+    <!-- Cái div làm tối hình nền khi click object định bởi gallery-zoom.js-->
+    <div class="cover"></div>
+    <!---->
+
+    <!-- Tựa đề gallery -->
+    <h1 class="gallery-title">GALLERY TITLE</h1>
+
+    <!-- Nhóm các thông tin; Không nhất thiết phải dùng -->
+    <div class="content-section">
+      <!-- (Những) Ô chữ được center và wrap; Không nhất thiết phải dùng-->
+      <div class="textbox">
+        <!-- 1 Ô đựng chữ và effect liên quan đến nó -->
+        <article class="section-desc zoom-onClick">
+          <!-- Tựa đề h2 -> h6 -->
+          <h2 class="section-desc-title">Big boi title 2</h2>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptatibus ipsa est dolores modi? Voluptatem hic, inventore adipisci cum
+          iusto expedita assumenda alias repellat? Accusamus iusto ducimus sit corrupti, ab totam eligendi dignissimos vero repellendus cupiditate,
+          pariatur, magni alias nulla ut id dolorum veritatis non? Tempora possimus tempore praesentium quasi amet! Iusto optio nam cupiditate id vel,
+          alias incidunt quisquam velit, ipsam molestias repudiandae esse beatae. Alias aspernatur dolores vitae excepturi quod facere expedita ab!
+          <br />
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias cumque sequi expedita odit alias reiciendis inventore doloribus
+          quibusdam explicabo, soluta voluptatibus ut reprehenderit exercitationem animi sunt pariatur laudantium, dignissimos fuga quam impedit
+          recusandae vitae minus asperiores omnis. Enim, dicta hic cumque accusantium impedit magnam eaque dolores ducimus culpa ex facere odio
+          delectus id accusamus quae nulla commodi harum saepe numquam reiciendis! Provident saepe odit cum facere excepturi repudiandae repellat,
+          harum minima in aliquid ipsa deserunt velit officiis omnis temporibus exercitationem dolores quod eius commodi. Unde quos, repellendus
+          maxime expedita maiores esse quibusdam! Inventore laborum, ipsam provident dignissimos illo atque facere asperiores obcaecati modi, repellat
+          dolorem ex minus maxime voluptatem deserunt saepe nam. Quidem quisquam dolorum corrupti nam accusantium deserunt consectetur ex? Impedit
+          cumque at maiores.
+        </article>
+      </div>
+
+      <!-- (Những) Hình được center và wrap; Không nhất thiết phải dùng -->
+      <div class="imgbox">
+        <!-- 1 Ô đựng hình và effect liên quan đến nó -->
+        <div class="section-img zoom-onClick">
+          <img src="gallery-img/gallery-dummy1.jpg" alt="dummyimg2" loading="lazy" class="img-cont" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
