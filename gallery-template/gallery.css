@@ -1,0 +1,117 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+/* Phần code cho hiệu ứng zoom */
+.cover {
+  visibility: hidden;
+
+  background: black;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 14;
+  opacity: 0;
+
+  transition-property: opacity, visibility;
+
+  /* Chỉnh thời gian và hàm animation của cái che tối trong zoom nếu muốn */
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+/*  Class này sẽ được toggle khi ấn vào một cái đã định hiệu ứng zoom
+    Thêm !important nếu thay đổi một attribute mà định ở class chỗ khác
+    (hoặc nếu không muốn nó bị đổi khi mình zoom vào) */
+.zoom {
+  z-index: 15;
+  position: fixed;
+
+  max-height: 80vh !important;
+  max-width: 80vw !important;
+
+  opacity: 0;
+  font-size: 1.5rem;
+
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+/* Hết phần code cho hiệu ứng zoom */
+
+/*  Phần title của gallery
+    Dùng cho h1 */
+.gallery-title {
+  text-align: center;
+  margin-inline: auto;
+}
+
+/*  Dùng để phân vùng và group các textbox (VD: theo thời gian, theo địa điểm, ...)
+    Dùng cho <div> chứa đống textbox, imgbox hay section-desc, section-img */
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  width: 100%;
+  height: fit-content;
+}
+
+/*  Phần đựng các ô viết text hay hình
+    Để center đống section-img, section-desc và wrap xuống hàng
+    Dùng cho (các) <div> chứa các section-desc, section-img nếu muốn */
+.textbox,
+.imgbox {
+  display: flex;
+  flex: 1 1 50%;
+  align-items: center;
+  justify-content: center;
+
+  height: min(60vh, 50%);
+}
+
+/*  Phần đựng cho cái text và cái hình, chỉnh số đo tuỳ ý
+    Dùng cho tag <div>, <article>, ... chứa text, hay img */
+.section-img {
+  line-height: 0;
+  width: fit-content;
+  height: fit-content;
+}
+.section-desc {
+  color: red;
+  background-color: black;
+
+  padding: 1rem;
+
+  min-width: 25vw;
+  max-width: 50ch;
+
+  height: fit-content;
+  max-height: 40vh;
+
+  overflow: hidden;
+}
+
+/* Để biết ô này ấn dược để zoom vào, bỏ nếu ko có hiệu ứng zoom */
+.section-desc:hover,
+.section-img:hover {
+  cursor: pointer;
+}
+
+/*  Chỉnh kích thước max của hình mà ko làm biến dạng kích thước của hình
+    Dùng cho tag <img> */
+.img-cont {
+  max-width: 35vw;
+  max-height: 50vh;
+}
+
+/*  Tựa đề cái phần text trong section-desc
+    Dùng cho h2 -> h5 */
+.section-desc-title {
+  font-size: 2em;
+}
