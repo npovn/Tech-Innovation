@@ -1,26 +1,26 @@
 @font-face {
     font-family: Iciel;
-    src: url(../Asset/Fonts/Iciel.ttf);
+    src: url(../../Home/Asset/Fonts/Iciel.ttf)
 }
 
 @font-face {
     font-family: Briko;
-    src: url(../Asset/Fonts/Briko.ttf);
+    src: url(../../Home/Asset/Fonts/Briko.ttf);
 }
 
 @font-face {
     font-family: SVN-Aleo;
-    src: url(../Asset/Fonts/SVN-Aleo.ttf);
+    src: url(../../Home/Asset/Fonts/SVN-Aleo.ttf);
 }
 
 @font-face {
     font-family: Spectral;
-    src: url(../Asset/Fonts/Spectral.ttf);
+    src: url(../../Home/Asset/Fonts/Spectral.ttf);
 }
 
 @font-face {
     font-family: NorthLand;
-    src: url(../Asset/Fonts/NorthLand.ttf);
+    src: url(../../Home/Asset/Fonts/NorthLand.ttf);
 }
 *{
     margin: 0;
@@ -31,8 +31,14 @@
     background-color: #24262b;
     color:white;
     position: relative;
-    padding-bottom: 100px;
-    padding-top: 0px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-bottom:100px;
+}
+
+body{
+    background-color: white;
 }
 
 /* Navbar */
@@ -40,7 +46,6 @@
     position: absolute;
     width: 80%;
     margin: auto;
-    transform: translateX(10vw);
     padding: 20px 0px;
     display: flex;
     align-items: center;
@@ -50,24 +55,24 @@
 .Logo{
     height: 10vh;
 }
-.navbar ul li{
+.navbar ul.PC_navbar li{
+    
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
 }
-.navbar ul li a{
+.navbar ul.PC_navbar li a{
     font-family: Iciel;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
-    font-size: 1.2vh;
+    color: rgb(41, 40, 40);
 }
 
-.navbar ul li::after{
+.navbar ul.PC_navbar li::after{
     content: "";
     align-items: center;
-    height: 5px;
+    height: 3.5px;
     bottom: -8px;
     left: 0;
     /* Cái này set cho animation */
@@ -75,6 +80,96 @@
     background-color: transparent;
     position: absolute;
     transition: 0.25s;
+}
+
+/* Hamburger */
+.burger_container{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger{
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.35s ease-in-out;
+}
+
+.burger::before, .burger::after{
+    content: "";
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+}
+
+.burger::before{
+    transform: translateY(-8px);
+}
+
+.burger::after{
+    transform: translateY(8px);
+}
+
+.burger_container.open .burger{
+    transform: translateX(-20px);
+    background-color: transparent;
+}
+
+.burger_container.open .burger::before{
+    transform: rotate(45deg) translate(20px, -19.5px);
+}
+
+.burger_container.open .burger::after{
+    transform: rotate(-45deg) translate(20px, 19.5px);
+}
+
+.burger_menu{
+    position: absolute;
+    width: 100vw;
+    display: block;
+    background-color: transparent;
+
+    /* Chỉnh dựa trên height của .Logo với 1/2 height của burger_menu */
+    transform: translateX(0) translateY(90px);
+    transition: all ease-in-out .5s;
+}
+
+.burger_menu ul.mobile_navbar li{
+    text-align: center;
+    list-style: none;
+    display: block;
+    padding: 10px;
+}
+
+.burger_menu ul.mobile_navbar li a{
+    font-family: Iciel;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.burger_menu.open{
+    background-color: rgb(41, 40, 40);
+    transform: translateY(110px);
+    transition: all 0.5s ease-in-out;
+}
+
+.burger_menu.open ul.mobile_navbar li a{
+    color: white;
+    transition: all 0.5s ease-in-out;
 }
 
 @keyframes Header_Transition {
@@ -107,47 +202,58 @@
 
 /* Khi media lớn như pc */
 @media screen and (min-width: 801px) {
-    .navbar ul li a {
-        font-size: 20px;
+    .burger_container{
+        display: none;
     }
-    .navbar ul li:hover::after{
+    .navbar ul.PC_navbar li a {
+        font-size: 15px;
+    }
+    .navbar ul.PC_navbar li:hover::after{
         width: 100%;
-        background-color: rgb(6, 226, 233);
+        background-color: rgb(255, 114, 114);
     }
-    .navbar ul li a:hover{
-        color: rgb(243, 17, 35);
+    .navbar ul.PC_navbar li a:hover{
+        color: rgb(27, 124, 90);
+    }
+    .burger_menu{
+        display: none;
     }
   }
 /* Chỉnh cỡ  navbar cho phù hợp  */
   @media screen and (max-width: 1080px) {
-    .navbar ul li a {
+    .navbar ul.PC_navbar li a {
         font-size: 15px;
       }
-    .navbar ul li::after{
+    .navbar ul.PC_navbar li::after{
         height: 4px;
     }
   }
 
   @media screen and (max-width: 1020px) {
-    .navbar ul li a {
+    .navbar ul.PC_navbar li a {
         font-size: 13px;
       }
-      .navbar ul li::after{
+      .navbar ul.PC_navbar li::after{
         height: 3.3px;
     }
   }
 
 /* Khi media nhỏ cỡ mobile */
   @media screen and (max-width: 800px) {
-    .navbar ul li a, .navbar ul li::after {
+    .navbar ul.PC_navbar li a, .navbar ul.PC_navbar li::after {
         display: none;
     }
     .Logo{
-        width: 95px;
+        width: 60px;
         height: auto;
+        margin-left: 25px;
+    }
+    .navbar{
+        background-color: rgb(41, 40, 40);
+        height: 1vh;
+        width: 100vw;
     }
   }
-
 
 /* CSS for footer */
 

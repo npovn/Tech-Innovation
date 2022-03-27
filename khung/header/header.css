@@ -243,7 +243,6 @@ body{
     .Logo{
         width: 60px;
         height: auto;
-        content: url("LogoWhite.png");
         margin-left: 25px;
     }
     .navbar{
